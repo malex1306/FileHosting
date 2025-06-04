@@ -1,0 +1,21 @@
+@model FileHosting.Models.FileUploadViewModel
+
+<h2>Datei hochladen</h2>
+
+<form asp-action="ImageUpload" method="post" enctype="multipart/form-data">
+    <div>
+        <label>Dateiname (ohne Endung):</label>
+        <input asp-for="FileName" />
+        <span asp-validation-for="FileName"></span>
+    </div>
+    <div>
+        <label>Datei auswählen:</label>
+        <input asp-for="UploadedFile" type="file" />
+        <span asp-validation-for="UploadedFile"></span>
+    </div>
+    <button type="submit">Hochladen</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
